@@ -58,6 +58,13 @@ app.get('/bad', (req, res) => {
         code: 400
     })
 })
+
+app.get('/downloads', (req, res) => {
+    res.render('downloads.hbs', {
+        pageTitle: 'Downloads'
+    })
+})
+
 app.listen(port, () => {
     console.log("Running on port ", port)
 })

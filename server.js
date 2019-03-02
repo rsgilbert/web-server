@@ -2,7 +2,7 @@ const express = require('express')
 const hbs = require('hbs')
 const fs = require('fs')
 
-const port = 3000
+const port = process.env.PORT || 3000
 
 
 let app = express()
@@ -58,4 +58,6 @@ app.get('/bad', (req, res) => {
         code: 400
     })
 })
-app.listen(port)
+app.listen(port, () => {
+    console.log("Running on port ", port)
+})
